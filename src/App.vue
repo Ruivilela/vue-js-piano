@@ -31,7 +31,9 @@
 }
 
 #piano {
-  position:absolute;
+  position:relative;
+  margin-top:30px;
+  right:19px;
 }
 
 h1, h2 {
