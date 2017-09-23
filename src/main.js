@@ -1,10 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
-import whiteKey from './component/whiteKey/component.vue';
-import blackKey from './component/blackKey/component.vue';
+import key from './component/key/component.vue';
 
-Vue.component('white-key', whiteKey)
-Vue.component('black-key', blackKey)
+Vue.component('piano-key', key)
 
 new Vue({
   el: '#app',
