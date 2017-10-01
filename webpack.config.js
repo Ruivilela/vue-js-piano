@@ -1,5 +1,9 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+
+const app = path.resolve(__dirname, 'src/');
+const state = path.resolve(__dirname, 'state/');
+const common = path.resolve(__dirname, 'common/'); 
 
 module.exports = {
   entry: './src/main.js',
@@ -35,6 +39,9 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@app': app,      
+      '@state': state,
+      '@common': common,
       'vue$': 'vue/dist/vue.esm.js'
     }
   },

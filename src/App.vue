@@ -3,23 +3,28 @@
     <h1>
       My Piano
     </h1>
+    <select-key> </select-key>
+    <select-scale> </select-scale> 
     <div id="piano">
-      <piano-key class="white-key" id="C"> </piano-key>
-      <piano-key class="black-key" id="C#"> </piano-key>
-      <piano-key class="white-key" id="D"> </piano-key>
-      <piano-key class="black-key" id="D#"> </piano-key>
-      <piano-key class="white-key" id="E"> </piano-key>
-      <piano-key class="white-key" id="F"> </piano-key>
-      <piano-key class="black-key" id="F#"> </piano-key>
-      <piano-key class="white-key" id="G"> </piano-key>
-      <piano-key class="black-key" id="G#"> </piano-key>
-      <piano-key class="white-key" id="A"> </piano-key>
-      <piano-key class="black-key" id="A#"> </piano-key>
-      <piano-key class="white-key" id="B"> </piano-key>
+      <piano-key 
+        v-for="key in loadPiano"
+        v-bind:pianoKey="key"
+        :key="key.note + key.octave" 
+        :class="key.class"
+      > 
+      </piano-key>
     </div>
   </div>
 </template> 
-
+<script> 
+  export default {
+    computed:{
+      loadPiano(){
+        return this.$store.getters.load_piano
+      }
+    }
+  }
+</script>
 <style>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

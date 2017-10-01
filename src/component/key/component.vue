@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="play">    
+    <div @click="play">    
     </div> 
 </template>
 
@@ -7,12 +7,14 @@
     const piano = Synth.createInstrument('piano');
 
     export default {
-        
+        props:[
+            'pianoKey'
+        ],
         methods: {
-            play(event) {
+            play() {
                 piano.play(
-                    event.target.id,
-                    4,
+                    this.$props.pianoKey.note,
+                    this.$props.pianoKey.octave,
                     2
                 )
             }
