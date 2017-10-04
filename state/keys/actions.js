@@ -1,3 +1,7 @@
-export function pressKeys({commit}, scale) {
-    commit('PRESS_KEYS', scale)
+export function selectRoot({commit}, scale) {
+    commit('SELECT_ROOT', scale)
+}
+
+export function playNotes({commit}, instrument){
+    commit('PLAY_NOTES')
 }

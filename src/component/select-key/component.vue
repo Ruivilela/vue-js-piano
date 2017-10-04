@@ -3,16 +3,14 @@
         <h3>
             Select key
         </h3>
-        <div class="row">
-            <div class="col-md-12"> 
-                <button
-                    @click='selectRoot' 
-                    v-for='note in chromaticScale'
-                    :value='note'
-                >
-                    {{ note }}
-                </button>
-            </div>
+        <div>
+            <button
+                @click='selectRoot' 
+                v-for='note in chromaticScale'
+                :value='note'
+            >
+                {{ note }}
+            </button>
         </div>
     </div> 
 </template>
@@ -21,7 +19,7 @@
     export default {
         methods: {
             selectRoot(e){
-                this.$store.dispatch('pressKeys', e.target.value)
+                this.$store.dispatch('selectRoot', e.target.value)
             }
         },
         computed: { 

@@ -4,8 +4,8 @@ import {
 } from './../../common/scales'; 
 
 const scales = {
-    name: '', 
-    selected:false, 
+    selected:false,
+    select_scale:'major scale', 
     all_scales: all_scales,
     chromatic: chromatic_scale
 }

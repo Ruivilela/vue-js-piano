@@ -3,7 +3,7 @@
         <h3> 
             Select Scale
         </h3>
-            <select>
+            <select v-on:change='selectScale'>
                 <option
                     v-for='scale in loadScales'
                     :value='scale.name'> 
@@ -16,6 +16,11 @@
 
 <script>
     export default {
+        methods:{
+            selectScale(e){
+                this.$store.dispatch('selectScale', e.target.value )
+            }
+        },
         computed: {
             loadScales(){
                 return this.$store.getters.load_all_scales

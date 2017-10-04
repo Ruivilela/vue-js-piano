@@ -1,8 +1,7 @@
 import { chromatic_scale } from './../../common/scales';
 
 const keys = {
-    pressed_keys:[],
-    scale:'',
+    root:'',
     all_keys: chromatic_scale
 }
 
